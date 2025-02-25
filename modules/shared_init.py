@@ -29,7 +29,8 @@ def initialize():
     devices.dtype_vae = torch.float32 if cmd_opts.no_half or cmd_opts.no_half_vae else torch.float16
 
     shared.device = devices.device
-    shared.weight_load_location = None if cmd_opts.lowram else "cpu"
+    # shared.weight_load_location = None if cmd_opts.lowram else "cpu"
+    shared.weight_load_location = None
 
     from modules import shared_state
     shared.state = shared_state.State()
